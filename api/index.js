@@ -1,5 +1,9 @@
-var express = require("express");
-var mongodb = require("mongodb").MongoClient;
+import  user  from './routes/auth.js';
+import express from 'express';
+import mongodb1 from 'mongodb';
+
+let mongodb = mongodb1.MongoClient;
+
 
 var url = "mongodb://localhost:27017/";
 
@@ -17,6 +21,10 @@ mongodb.connect(url, (err, client) => {
     });
 
 });
+
+app.get("/auth", (req, res) => {
+    
+}); 
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
